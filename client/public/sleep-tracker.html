@@ -3,11 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Health Journal - HealthScape</title>
-    <link rel="stylesheet" href="css/main.css" />
+    <title>Sleep Tracker - HealthScape</title>
+    <link rel="stylesheet" href="/client/src/css/main.css" />
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
   </head>
-
   <body>
     <!-- Header -->
     <header>
@@ -15,7 +14,6 @@
         <img src="images/logo.png" alt="HealthScape Logo" />
         <h1>HealthScape</h1>
       </div>
-
       <nav>
         <ul>
           <li><a href="dashboard.html">Dashboard</a></li>
@@ -33,31 +31,32 @@
 
     <!-- Main Content Area -->
     <main id="mainContent">
-      <h2>Health Journal</h2>
+      <h2>Sleep Tracker</h2>
 
-      <!-- Journal Entry Form Section -->
-      <form id="journalEntryForm">
-        <label for="entryDate">Date:</label><br />
-        <input type="date" id="entryDate" name="entryDate" required /><br />
+      <!-- Sleep Logging Form Section -->
+      <form id="sleepLogForm">
+        <label for="sleepDuration">Sleep Duration (hours):</label><br />
+        <input
+          type="number"
+          id="sleepDuration"
+          name="sleepDuration"
+          step="0.1"
+          required
+        /><br />
 
-        <label for="entryTitle">Title:</label><br />
-        <input type="text" id="entryTitle" name="entryTitle" required /><br />
-
-        <label for="entryContent">Content:</label><br />
-        <textarea id="entryContent" name="entryContent" required></textarea
+        <label for="sleepQuality">Sleep Quality:</label><br />
+        <select id="sleepQuality" name="sleepQuality" required>
+          <option value="good">Good</option>
+          <option value="fair">Fair</option>
+          <option value="poor">Poor</option></select
         ><br />
 
+        <label for="notes">Notes:</label><br />
+        <textarea id="notes" name="notes"></textarea><br />
+
         <!-- Submit Button -->
-        <button type="submit">Add Entry</button>
+        <button type="submit">Log Sleep</button>
       </form>
-
-      <!-- Journal Entries Section (Placeholder) -->
-      <h3>Your Entries:</h3>
-
-      <div id="journalEntriesContainer">
-        <!-- Placeholder for dynamically added journal entries -->
-        <p>No entries yet.</p>
-      </div>
     </main>
 
     <!-- Footer -->

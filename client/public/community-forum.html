@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Resources - HealthScape</title>
-    <link rel="stylesheet" href="css/main.css" />
+    <title>Community Forum - HealthScape</title>
+    <link rel="stylesheet" href="/client/src/css/main.css" />
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
   </head>
   <body>
@@ -31,39 +31,41 @@
 
     <!-- Main Content Area -->
     <main id="mainContent">
-      <h2>Resources</h2>
+      <h2>Community Forum</h2>
 
-      <!-- Articles Section -->
-      <section id="articles">
-        <h3>Articles</h3>
-        <ul>
-          <li><a href="#">Understanding Nutrition Basics</a></li>
-          <li><a href="#">The Importance of Regular Exercise</a></li>
-          <li><a href="#">Mental Health: Tips for Well-being</a></li>
-        </ul>
-      </section>
+      <!-- Forum Post Form Section -->
+      <form id="forumPostForm">
+        <label for="postTitle">Post Title:</label><br />
+        <input type="text" id="postTitle" name="postTitle" required /><br />
 
-      <!-- Videos Section -->
-      <section id="videos">
-        <h3>Videos</h3>
-        <ul>
-          <li><a href="#">How to Meal Prep for Success</a></li>
-          <li><a href="#">Yoga for Beginners</a></li>
-          <li><a href="#">Meditation Techniques for Stress Relief</a></li>
-        </ul>
-      </section>
+        <label for="postContent">Content:</label><br />
+        <textarea id="postContent" name="postContent" required></textarea><br />
 
-      <!-- Tips Section -->
-      <section id="tips">
-        <h3>Tips</h3>
-        <ul>
-          <li>Drink plenty of water throughout the day.</li>
-          <li>
-            Incorporate a variety of fruits and vegetables into your meals.
-          </li>
-          <li>Set realistic fitness goals and track your progress.</li>
-        </ul>
-      </section>
+        <!-- Submit Button -->
+        <button type="submit">Post Discussion</button>
+      </form>
+
+      <!-- Discussion Threads Section (Placeholder) -->
+      <h3>Recent Discussions:</h3>
+
+      <!-- Placeholder for dynamically added discussion threads -->
+      <div id="discussionThreadsContainer">
+        <!-- Example thread entries -->
+        <!-- In a real application, this would be populated dynamically -->
+        <div class="thread">
+          <h4>How to stay motivated during workouts?</h4>
+          <p>
+            This is a great question! I find that setting small goals helps me
+            stay on track.
+          </p>
+        </div>
+
+        <!-- More threads can be added here -->
+        <!-- Example thread entry ends here -->
+
+        <!-- Placeholder if no discussions exist -->
+        <!--<p>No discussions yet.</p>-->
+      </div>
     </main>
 
     <!-- Footer -->

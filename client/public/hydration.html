@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mood Tracker - HealthScape</title>
-    <link rel="stylesheet" href="css/main.css">
+    <title>Hydration Log - HealthScape</title>
+    <link rel="stylesheet" href="/client/src/css/main.css">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
@@ -26,30 +26,33 @@
                 <li><a href="sleep-tracker.html">Sleep Tracker</a></li>
                 <li><a href="resources.html">Resources</a></li>
                 <li><a href="community-forum.html">Community</a></li>
-            </ul>
-        </nav>
-    </header>
+            </ul> 
+        </nav> 
+    </header> 
 
     <!-- Main Content Area -->
     <main id="mainContent">
-        <h2>Mood Tracker</h2>
+        <h2>Hydration Log</h2>
 
-        <!-- Mood Tracking Form Section -->
-        <form id="moodTrackerForm">
-            <label for="mood">Mood:</label><br />
-            <select id="mood" name="mood" required>
-                <option value="happy">Happy</option>
-                <option value="neutral">Neutral</option>
-                <option value="sad">Sad</option>
-                <option value="angry">Angry</option>
-            </select><br />
+        <!-- Hydration Logging Form Section -->
+        <form id="hydrationLogForm">
+            <label for="waterIntake">Water Intake (liters):</label><br />
+            <input type="number" id="waterIntake" name="waterIntake" step="0.1" required /><br />
 
             <label for="notes">Notes:</label><br />
             <textarea id="notes" name="notes"></textarea><br />
 
             <!-- Submit Button -->
-            <button type="submit">Log Mood</button>
+            <button type="submit">Log Water Intake</button>
         </form>
+
+        <!-- Progress Indicator -->
+        <h3>Your Progress:</h3>
+        <div id="progressIndicator">
+            <!-- Placeholder for visual progress indicator (e.g., a progress bar) -->
+            <progress id="hydrationProgress" value="0" max="10"></progress> <!-- Assuming 10 liters as a daily goal -->
+            <p id="progressText">0 liters logged today.</p>
+        </div>
 
     </main>
 

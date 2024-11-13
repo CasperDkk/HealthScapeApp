@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sleep Tracker - HealthScape</title>
-    <link rel="stylesheet" href="css/main.css">
+    <title>Mood Tracker - HealthScape</title>
+    <link rel="stylesheet" href="/client/src/css/main.css">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
@@ -26,31 +26,29 @@
                 <li><a href="sleep-tracker.html">Sleep Tracker</a></li>
                 <li><a href="resources.html">Resources</a></li>
                 <li><a href="community-forum.html">Community</a></li>
-            </ul> 
-        </nav> 
-    </header> 
+            </ul>
+        </nav>
+    </header>
 
     <!-- Main Content Area -->
     <main id="mainContent">
-        <h2>Sleep Tracker</h2>
+        <h2>Mood Tracker</h2>
 
-        <!-- Sleep Logging Form Section -->
-        <form id="sleepLogForm">
-            <label for="sleepDuration">Sleep Duration (hours):</label><br />
-            <input type="number" id="sleepDuration" name="sleepDuration" step="0.1" required /><br />
-
-            <label for="sleepQuality">Sleep Quality:</label><br />
-            <select id="sleepQuality" name="sleepQuality" required>
-                <option value="good">Good</option>
-                <option value="fair">Fair</option>
-                <option value="poor">Poor</option>
+        <!-- Mood Tracking Form Section -->
+        <form id="moodTrackerForm">
+            <label for="mood">Mood:</label><br />
+            <select id="mood" name="mood" required>
+                <option value="happy">Happy</option>
+                <option value="neutral">Neutral</option>
+                <option value="sad">Sad</option>
+                <option value="angry">Angry</option>
             </select><br />
 
             <label for="notes">Notes:</label><br />
             <textarea id="notes" name="notes"></textarea><br />
 
             <!-- Submit Button -->
-            <button type="submit">Log Sleep</button>
+            <button type="submit">Log Mood</button>
         </form>
 
     </main>

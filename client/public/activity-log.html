@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard - HealthScape</title>
-    <link rel="stylesheet" href="css/main.css">
+    <title>Activity Log - HealthScape</title>
+    <link rel="stylesheet" href="/client/src/css/main.css">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
@@ -32,34 +32,29 @@
 
     <!-- Main Content Area -->
     <main id="mainContent">
-        <h2>Dashboard Overview</h2>
+        <h2>Activity Log</h2>
 
-        <!-- Health Metrics Section -->
-        <section class="health-metrics">
-            <div class="metric">
-                <h3>Daily Steps</h3>
-                <p id="dailySteps">0 steps</p>
-            </div>
-            <div class="metric">
-                <h3>Water Intake</h3>
-                <p id="waterIntake">0 liters</p>
-            </div>
-            <div class="metric">
-                <h3>Mood Status</h3>
-                <p id="moodStatus">Neutral</p>
-            </div>
-            <div class="metric">
-                <h3>Exercise Logs</h3>
-                <p id="exerciseLogs">No logs yet.</p>
-            </div>
-        </section>
+        <!-- Activity Log Form Section -->
+        <form id="activityLogForm">
+            <label for="activityName">Activity Name:</label><br />
+            <input type="text" id="activityName" name="activityName" required /><br />
 
-        <!-- Graphical Representation (Placeholder) -->
-        <section class="charts">
-            <h3>Progress Charts</h3>
-            <!-- Placeholder for charts (to be implemented with Chart.js or similar) -->
-            <canvas id="progressChart" width="400" height="200"></canvas>
-        </section>
+            <label for="duration">Duration (minutes):</label><br />
+            <input type="number" id="duration" name="duration" required /><br />
+
+            <label for="intensity">Intensity:</label><br />
+            <select id="intensity" name="intensity">
+                <option value="low">Low</option>
+                <option value="moderate">Moderate</option>
+                <option value="high">High</option>
+            </select><br />
+
+            <label for="notes">Notes:</label><br />
+            <textarea id="notes" name="notes"></textarea><br />
+
+            <!-- Submit Button -->
+            <button type="submit">Log Activity</button>
+        </form>
 
     </main>
 
