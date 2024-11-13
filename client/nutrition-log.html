@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nutrition Log - HealthScape</title>
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="logo">
+        <img src="images/logo.png" alt="HealthScape Logo" />
+        <h1>HealthScape</h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="dashboard.html">Dashboard</a></li>
+          <li><a href="profile.html">Profile</a></li>
+          <li><a href="activity-log.html">Activity Log</a></li>
+          <li><a href="mood-tracker.html">Mood Tracker</a></li>
+          <li><a href="nutrition-log.html">Nutrition Log</a></li>
+          <li><a href="hydration.html">Hydration</a></li>
+          <li><a href="sleep-tracker.html">Sleep Tracker</a></li>
+          <li><a href="resources.html">Resources</a></li>
+          <li><a href="community-forum.html">Community</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Main Content Area -->
+    <main id="mainContent">
+      <h2>Nutrition Log</h2>
+
+      <!-- Nutrition Logging Form Section -->
+      <form id="nutritionLogForm">
+        <label for="foodItem">Food Item:</label><br />
+        <input type="text" id="foodItem" name="foodItem" required /><br />
+
+        <label for="calories">Calories:</label><br />
+        <input type="number" id="calories" name="calories" required /><br />
+
+        <label for="servingSize">Serving Size:</label><br />
+        <input type="text" id="servingSize" name="servingSize" /><br />
+
+        <!-- Notes Section -->
+        <label for="notes">Notes:</label><br />
+        <textarea id="notes" name="notes"></textarea><br />
+
+        <!-- Submit Button -->
+        <button type="submit">Log Meal</button>
+      </form>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2024 HealthScape. All rights reserved.</p>
+      <ul class="social-media">
+        <li><a href="#">Facebook</a></li>
+        <li><a href="#">Twitter</a></li>
+        <li><a href="#">Instagram</a></li>
+      </ul>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/app.js"></script>
+  </body>
+</html>
