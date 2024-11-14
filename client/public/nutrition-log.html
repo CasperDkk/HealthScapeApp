@@ -16,15 +16,15 @@
       </div>
       <nav>
         <ul>
-          <li><a href="dashboard.html">Dashboard</a></li>
-          <li><a href="profile.html">Profile</a></li>
-          <li><a href="activity-log.html">Activity Log</a></li>
-          <li><a href="mood-tracker.html">Mood Tracker</a></li>
-          <li><a href="nutrition-log.html">Nutrition Log</a></li>
-          <li><a href="hydration.html">Hydration</a></li>
-          <li><a href="sleep-tracker.html">Sleep Tracker</a></li>
-          <li><a href="resources.html">Resources</a></li>
-          <li><a href="community-forum.html">Community</a></li>
+          <li><a href="#" id="dashboardLink">Dashboard</a></li>
+          <li><a href="#" id="profileLink">Profile</a></li>
+          <li><a href="#" id="activityLogLink">Activity Log</a></li>
+          <li><a href="#" id="moodTrackerLink">Mood Tracker</a></li>
+          <li><a href="#" id="nutritionLogLink">Nutrition Log</a></li>
+          <li><a href="#" id="hydrationLink">Hydration</a></li>
+          <li><a href="#" id="sleepTrackerLink">Sleep Tracker</a></li>
+          <li><a href="#" id="resourcesLink">Resources</a></li>
+          <li><a href="#" id="communityLink">Community</a></li>
         </ul>
       </nav>
     </header>
@@ -51,6 +51,13 @@
         <!-- Submit Button -->
         <button type="submit">Log Meal</button>
       </form>
+
+      <!-- Logged Meals Section -->
+      <h3>Your Logged Meals:</h3>
+      <div id="loggedMealsContainer">
+        <!-- Placeholder for dynamically added meal entries -->
+        <p>No meals logged yet.</p>
+      </div>
     </main>
 
     <!-- Footer -->
@@ -64,6 +71,6 @@
     </footer>
 
     <!-- JavaScript -->
-    <script src="js/app.js"></script>
+    <script src="/client/src/js/nutrition-log.js"></script>
   </body>
 </html>
