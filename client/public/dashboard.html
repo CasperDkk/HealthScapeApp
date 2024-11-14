@@ -1,80 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dashboard - HealthScape</title>
-    <link rel="stylesheet" href="/client/src/css/main.css">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-</head>
-<body>
-
+    <link rel="stylesheet" href="/client/src/css/main.css" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
     <!-- Header -->
     <header>
-        <div class="logo">
-            <img src="images/logo.png" alt="HealthScape Logo">
-            <h1>HealthScape</h1>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="dashboard.html">Dashboard</a></li>
-                <li><a href="profile.html">Profile</a></li>
-                <li><a href="activity-log.html">Activity Log</a></li>
-                <li><a href="mood-tracker.html">Mood Tracker</a></li>
-                <li><a href="nutrition-log.html">Nutrition Log</a></li>
-                <li><a href="hydration.html">Hydration</a></li>
-                <li><a href="sleep-tracker.html">Sleep Tracker</a></li>
-                <li><a href="resources.html">Resources</a></li>
-                <li><a href="community-forum.html">Community</a></li>
-            </ul>
-        </nav>
+      <div class="logo">
+        <img src="images/logo.png" alt="HealthScape Logo" />
+        <h1>HealthScape</h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="dashboard.html">Dashboard</a></li>
+          <li><a href="profile.html">Profile</a></li>
+          <li><a href="activity-log.html">Activity Log</a></li>
+          <li><a href="mood-tracker.html">Mood Tracker</a></li>
+          <li><a href="nutrition-log.html">Nutrition Log</a></li>
+          <li><a href="hydration.html">Hydration</a></li>
+          <li><a href="sleep-tracker.html">Sleep Tracker</a></li>
+          <li><a href="resources.html">Resources</a></li>
+          <li><a href="community-forum.html">Community</a></li>
+        </ul>
+      </nav>
     </header>
 
     <!-- Main Content Area -->
     <main id="mainContent">
-        <h2>Dashboard Overview</h2>
+      <h2>Dashboard Overview</h2>
 
-        <!-- Health Metrics Section -->
-        <section class="health-metrics">
-            <div class="metric">
-                <h3>Daily Steps</h3>
-                <p id="dailySteps">0 steps</p>
-            </div>
-            <div class="metric">
-                <h3>Water Intake</h3>
-                <p id="waterIntake">0 liters</p>
-            </div>
-            <div class="metric">
-                <h3>Mood Status</h3>
-                <p id="moodStatus">Neutral</p>
-            </div>
-            <div class="metric">
-                <h3>Exercise Logs</h3>
-                <p id="exerciseLogs">No logs yet.</p>
-            </div>
-        </section>
+      <!-- Health Metrics Section -->
+      <section class="health-metrics">
+        <div class="metric">
+          <h3>Daily Steps</h3>
+          <p id="dailySteps">0 steps</p>
+        </div>
+        <div class="metric">
+          <h3>Water Intake</h3>
+          <p id="waterIntake">0 liters</p>
+        </div>
+        <div class="metric">
+          <h3>Mood Status</h3>
+          <p id="moodStatus">Neutral</p>
+        </div>
+        <div class="metric">
+          <h3>Exercise Logs</h3>
+          <ul id="exerciseLogs">
+            <li>No logs yet.</li>
+          </ul>
+        </div>
+      </section>
 
-        <!-- Graphical Representation (Placeholder) -->
-        <section class="charts">
-            <h3>Progress Charts</h3>
-            <!-- Placeholder for charts (to be implemented with Chart.js or similar) -->
-            <canvas id="progressChart" width="400" height="200"></canvas>
-        </section>
-
+      <!-- Graphical Representation (Placeholder) -->
+      <section class="charts">
+        <h3>Progress Charts</h3>
+        <!-- Placeholder for charts (to be implemented with Chart.js or similar) -->
+        <canvas id="progressChart" width="400" height="200"></canvas>
+      </section>
     </main>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2024 HealthScape. All rights reserved.</p>
-        <ul class="social-media">
-            <li><a href="#">Facebook</a></li>
-            <li><a href="#">Twitter</a></li>
-            <li><a href="#">Instagram</a></li>
-        </ul>
+      <p>&copy; 2024 HealthScape. All rights reserved.</p>
+      <ul class="social-media">
+        <li><a href="#">Facebook</a></li>
+        <li><a href="#">Twitter</a></li>
+        <li><a href="#">Instagram</a></li>
+      </ul>
     </footer>
 
     <!-- JavaScript -->
-    <script src="js/app.js"></script>
-
-</body>
+    <script src="/client/src/js/dashboard.js"></script>
+  </body>
 </html>
