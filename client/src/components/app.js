@@ -45,8 +45,16 @@ function loadContent(content) {
 document.querySelectorAll('nav ul li a').forEach(link => {
     link.addEventListener('click', function(event) {
         const contentName = this.textContent; // Get the link text
-        loadContent(contentName); // Load corresponding content
-        event.preventDefault(); // Prevent default link behavior
+        
+        // Check if it's a dynamic link or a static page
+        if (contentName === "Dashboard") {
+            loadContent(contentName); // Load corresponding content dynamically
+        } else {
+            // Allow normal navigation for other pages
+            window.location.href = this.href; // Navigate to static page
+        }
+        
+        event.preventDefault(); // Prevent default link behavior only for dynamic links
     });
 });
 
