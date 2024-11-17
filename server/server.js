@@ -4,10 +4,10 @@ const express = require('express');
 const session = require('express-session');
 const dotenv = require('dotenv');
 const cors = require('cors');
-const pool = require('./config/db'); // Import the database pool
-const userRoutes = require('./routes/userRoutes'); // Import user routes
-const activityRoutes = require('./routes/activityRoutes'); // Import activity routes
-const errorHandler = require('./utils/errorHandler'); // Import custom error handler
+const pool = require('./config/db'); 
+const userRoutes = require('./routes/user-routes'); // Import user routes
+const activityRoutes = require('./routes/activity-routes'); // Import activity routes
+const errorHandler = require('./utils/error-handler'); // Import custom error handler
 
 // Load environment variables from .env file
 dotenv.config();
@@ -21,6 +21,7 @@ app.use(express.json()); // Parse JSON request bodies
 
 // Session configuration
 app.use(session({
+    key: 'healthscape_session',
     secret: process.env.SESSION_SECRET,
     resave: false,
     saveUninitialized: false,
@@ -39,10 +40,12 @@ app.use(errorHandler); // Custom error handler for centralized error management
 
 // Function to initialize the database schema and seed data
 const initializeDatabase = async () => {
-    const schemaSQL = `
+    const createDatabaseSQL = `
         CREATE DATABASE IF NOT EXISTS healthscape;
         USE healthscape;
+        `;
 
+    const useDatabaseSQL = `
         -- Users table
         CREATE TABLE IF NOT EXISTS users (
             id INT AUTO_INCREMENT PRIMARY KEY,
@@ -152,6 +155,10 @@ const initializeDatabase = async () => {
 
     try {
         const connection = await pool.getConnection(); // Get a connection from the pool
+
+        await connection.query(createDatabaseSQL); // Execute DB creation
+
+        await connection.changeUser({database: 'healthscape'}); //Use DB
         
         await connection.query(schemaSQL); // Execute schema creation queries
         
@@ -168,7 +175,7 @@ const initializeDatabase = async () => {
 
 // Initialize the database and start the server after setup is complete.
 initializeDatabase().then(() => {
-    const PORT = process.env.PORT || 5000;
+    const PORT = process.env.PORT || 3000;
     app.listen(PORT, () => {
         console.log(`Server is running on port ${PORT}`);
     });
