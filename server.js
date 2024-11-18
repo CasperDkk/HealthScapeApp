@@ -2,14 +2,14 @@
 
 const express = require('express');
 const session = require('express-session');
-const dotenv = require('dotenv');
 const cors = require('cors');
+const dotenv = require('dotenv');
 const MySQLStore = require('express-mysql-session')(session);
 const mysql = require('mysql2/promise'); 
-const pool = require('./config/db'); 
-const userRoutes = require('./routes/user-routes'); 
-const activityRoutes = require('./routes/activity-routes'); 
-const errorHandler = require('./utils/error-handler'); 
+const bcrypt = require('bcryptjs');
+const userRoutes = require('./server/routes/user-routes'); 
+const activityRoutes = require('./server/routes/activity-routes'); 
+const errorHandler = require('./server/utils/error-handler'); 
 
 
 dotenv.config();
@@ -21,7 +21,32 @@ const app = express();
 app.use(cors()); // Enable CORS for all routes
 app.use(express.json()); // Parse JSON request bodies
 
+// Function to create the database if it doesn't exist
+async function createDatabase() {
+    const connection = await mysql.createConnection({
+        host: process.env.DB_HOST,
+        user: process.env.DB_USER,
+        password: process.env.DB_PASSWORD
+    });
+
+    try {
+        await connection.query('CREATE DATABASE IF NOT EXISTS healthscape');
+        console.log("Database 'healthscape' created or already exists.");
+    } catch (error) {
+        console.error("Error creating database:", error);
+    } finally {
+        await connection.end();
+    }
+}
+
 // Session management using MySQLStore
+const pool = mysql.createPool({
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: 'healthscape'
+});
+
 const sessionStore = new MySQLStore({}, pool);
 
 app.use(session({
@@ -48,9 +73,6 @@ app.use(errorHandler); // Custom error handler for centralized error management
 async function initDatabase() {
     const connection = await pool.getConnection();
     try {
-        //Create healthscape db if it does not exist
-        await connection.query(`CREATE DATABASE IF NOT EXISTS healthscape`);
-
         //Create tables in the healthscape db
         await connection.query(`
             -- Users table
@@ -135,7 +157,7 @@ async function initDatabase() {
 // Function to insert sample data
 async function insertSampleData() {
     const connection = await pool.getConnection();
-    try{
+    try {
         console.log("Inserting sample data...");
 
         // Sample users with hashed passwords
@@ -146,7 +168,7 @@ async function insertSampleData() {
             'INSERT IGNORE INTO users (username, email, password) VALUES (?, ?, ?)',
             ['john_doe', 'john@example.com', hashedPassword1]
         );
-        
+
         await connection.query(
             'INSERT IGNORE INTO users (username, email, password) VALUES (?, ?, ?)',
             ['jane_smith', 'jane@example.com', hashedPassword2]
@@ -217,21 +239,29 @@ async function insertSampleData() {
     } catch (error) {
         console.error("Error inserting sample data:", error);
     } finally {
-        if (connection) connection.release(); // Release the connection back to the pool
+        connection.release(); // Release the connection back to the pool
     }
 }
 
 
+// Function to initialize server and db set-up
+(async function () {
+    try {
+        // Ensure the database is created first
+        await createDatabase();
+        const pool = await initDatabase();
+        
+        // Insert sample data after initializing the database
+        await insertSampleData();
 
+        // Define the server's port
+        const PORT = process.env.PORT || 3000;
 
-// Function to initialize db after completing set-up
-initDatabase().then(() => {
-    insertSampleData();
-}).then(() => {
-    // Start server
-    const PORT = process.env.PORT || 3000;
-    server.listen(PORT, () => {
-        console.log(`Server is running on port ${PORT}`);
-    });
-}).catch(err => console.error(err));
-
+        // Start the server and listen on the defined port
+        app.listen(PORT, () => {
+            console.log(`Server running on http://localhost:${PORT}`);
+        });
+    } catch (error) {
+        console.error("Error initializing application:", error);
+    }
+})();

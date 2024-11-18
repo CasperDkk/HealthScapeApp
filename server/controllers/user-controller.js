@@ -1,7 +1,7 @@
 // server/controllers/userController.js
 
 const bcrypt = require('bcrypt');
-const pool = require('../config/db'); // Import the database pool
+const pool = require('../../db'); // Import the database pool
 
 // Function to register a new user
 exports.registerUser = async (req, res) => {

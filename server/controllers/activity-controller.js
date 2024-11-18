@@ -1,6 +1,6 @@
 // server/controllers/activityController.js
 
-const pool = require('../config/db'); // Import the database pool
+const pool = require('../../db'); // Import the database pool
 
 // Function to log a new activity
 exports.logActivity = async (req, res) => {
