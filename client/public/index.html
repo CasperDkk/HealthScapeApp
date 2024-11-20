@@ -1,87 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>HealthScape App</title>
-    <link rel="stylesheet" href="/client/src/css/main.css" />
-    <link rel="icon" href="favicon.ico" type="image/x-icon" />
-  </head>
-  <body>
-    <!-- Header -->
-    <header>
-      <div class="logo">
-        <img src="images/logo.png" alt="HealthScape Logo" />
-        <h1>HealthScape</h1>
-      </div>
-      <nav>
-        <ul>
-          <li><a href="#" id="dashboardLink">Dashboard</a></li>
-          <li><a href="#" id="profileLink">Profile</a></li>
-          <li><a href="#" id="activityLogLink">Activity Log</a></li>
-          <li><a href="#" id="moodTrackerLink">Mood Tracker</a></li>
-          <li><a href="#" id="nutritionLogLink">Nutrition Log</a></li>
-          <li><a href="#" id="hydrationLink">Hydration</a></li>
-          <li><a href="#" id="sleepTrackerLink">Sleep Tracker</a></li>
-          <li><a href="#" id="resourcesLink">Resources</a></li>
-          <li><a href="#" id="communityLink">Community</a></li>
-        </ul>
-      </nav>
-    </header>
-
-    <!-- Main Content Area -->
-    <main id="mainContent">
-      <!-- Placeholder for dynamic content -->
-      <h2>Welcome to HealthScape!</h2>
-      <p>
-        Your personal health tracking app designed to help you monitor your
-        hydration, mood, activities, and nutrition.
-      </p>
-
-      <!-- Features Overview -->
-      <section id="features">
-        <h3>Key Features:</h3>
-        <ul>
-          <li>Track your daily hydration intake.</li>
-          <li>Log your mood and reflect on your emotional well-being.</li>
-          <li>Record physical activities and workouts.</li>
-          <li>Manage your nutrition and meal planning.</li>
-        </ul>
-      </section>
-
-      <!-- Call to Action -->
-      <section id="cta">
-        <h3>Get Started!</h3>
-        <p>Start tracking your health today by visiting your dashboard.</p>
-        <!-- Removed direct link to dashboard.html -->
-        <button class="button" id="goToDashboardButton">Go to Dashboard</button>
-        <!-- Button for dynamic loading -->
-      </section>
-
-      <!-- User Testimonials -->
-      <section id="testimonials">
-        <h3>User Testimonials:</h3>
-        <blockquote>
-          "HealthScape has transformed how I manage my health!" - User A
-        </blockquote>
-        <blockquote>
-          "I love tracking my hydration and seeing my progress!" - User B
-        </blockquote>
-      </section>
-    </main>
-
-    <!-- Footer -->
-    <footer>
-      <p>&copy; 2024 HealthScape. All rights reserved.</p>
-      <ul class="social-media">
-        <li><a href="#">Facebook</a></li>
-        <li><a href="#">Twitter</a></li>
-        <li><a href="#">Instagram</a></li>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HealthScape App</title>
+  <link rel="stylesheet" href="/client/src/css/main.css">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="logo">
+      <img src="images/logo.png" alt="HealthScape Logo">
+      <h1>HealthScape</h1>
+    </div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#" id="dashboardLink">Dashboard</a></li>
+        <li><a href="#" id="profileLink">Profile</a></li>
+        <li><a href="#" id="activityLogLink">Activity Log</a></li>
+        <li><a href="#" id="moodTrackerLink">Mood Tracker</a></li>
+        <li><a href="#" id="nutritionLogLink">Nutrition Log</a></li>
+        <li><a href="#" id="hydrationLink">Hydration</a></li>
+        <li><a href="#" id="sleepTrackerLink">Sleep Tracker</a></li>
+        <li><a href="#" id="resourcesLink">Resources</a></li>
+        <li><a href="#" id="communityLink">Community</a></li>
       </ul>
-    </footer>
+    </nav>
+  </header>
 
-    <!-- JavaScript -->
-    <script src="/client/src/js/app.js"></script>
-    <!-- Include your main app.js file for dynamic loading -->
-  </body>
+  <!-- Main Content -->
+  <main>
+    <section id="welcome">
+      <h2>Welcome to HealthScape!</h2>
+      <p>Your personal health tracking app designed to help you monitor your hydration, mood, activities, and nutrition.</p>
+    </section>
+
+    <section id="features">
+      <h3>Key Features:</h3>
+      <ul>
+        <li>Track your daily hydration intake.</li>
+        <li>Log your mood and reflect on your emotional well-being.</li>
+        <li>Record physical activities and workouts.</li>
+        <li>Manage your nutrition and meal planning.</li>
+      </ul>
+    </section>
+
+    <section id="cta">
+      <h3>Get Started!</h3>
+      <p>Start tracking your health today by visiting your dashboard.</p>
+      <button class="button" id="goToDashboardButton">Go to Dashboard</button>
+    </section>
+
+    <section id="testimonials">
+      <h3>User Testimonials:</h3>
+      <blockquote>"HealthScape has transformed how I manage my health!" - User A</blockquote>
+      <blockquote>"I love tracking my hydration and seeing my progress!" - User B</blockquote>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 HealthScape. All rights reserved.</p>
+    <ul class="social-media">
+      <li><a href="#">Facebook</a></li>
+      <li><a href="#">Twitter</a></li>
+      <li><a href="#">Instagram</a></li>
+    </ul>
+  </footer>
+
+  <script src="/client/src/js/app.js"></script>
+</body>
 </html>
