@@ -1,137 +1,148 @@
 /* Reset */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: 'Arial', sans-serif;
-    background-color: #fef9f5;
-    color: #333;
-    line-height: 1.6;
-  }
-  
-  header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: linear-gradient(90deg, #ff8a5c, #ff3b3b);
-    color: #fff;
-    padding: 1rem 2rem;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .logo {
-    display: flex;
-    align-items: center;
-  }
-  
-  .logo img {
-    width: 50px;
-    height: 50px;
-    margin-right: 1rem;
-  }
-  
-  .logo h1 {
-    font-size: 1.8rem;
-    font-weight: bold;
-  }
-  
-  .nav-links {
-    display: flex;
-    list-style: none;
-  }
-  
-  .nav-links li {
-    margin: 0 1rem;
-  }
-  
-  .nav-links a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s ease;
-  }
-  
-  .nav-links a:hover {
-    color: #ffddc1;
-  }
-  
-  main {
-    padding: 2rem;
-  }
-  
-  #welcome h2 {
-    color: #ff5733;
-    font-size: 2rem;
-  }
-  
-  #features h3,
-  #cta h3,
-  #testimonials h3 {
-    color: #ff3b3b;
-    margin-top: 2rem;
-  }
-  
-  ul {
-    list-style-type: disc;
-    margin-left: 2rem;
-  }
-  
-  #cta {
-    text-align: center;
-    margin-top: 2rem;
-  }
-  
-  #cta .button {
-    background-color: #ff8a5c;
-    color: #fff;
-    border: none;
-    padding: 0.8rem 1.5rem;
-    font-size: 1rem;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  #cta .button:hover {
-    background-color: #ff5733;
-  }
-  
-  blockquote {
-    margin: 1rem 0;
-    font-style: italic;
-    color: #555;
-    padding-left: 1rem;
-    border-left: 4px solid #ff8a5c;
-  }
-  
-  footer {
-    text-align: center;
-    padding: 1rem 0;
-    background: #ff3b3b;
-    color: #fff;
-  }
-  
-  footer .social-media {
-    list-style: none;
-    margin-top: 1rem;
-    display: flex;
-    justify-content: center;
-  }
-  
-  footer .social-media li {
-    margin: 0 0.5rem;
-  }
-  
-  footer .social-media a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 1.2rem;
-  }
-  
-  footer .social-media a:hover {
-    text-decoration: underline;
-  }
-  
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #faf9f6; /* Soft Cream */
+  color: #37474f; /* Dark Slate */
+  line-height: 1.6;
+}
+
+/* Header Styles */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #009688; /* Teal */
+  color: #fff;
+  padding: 1rem 2rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  width: 50px;
+  height: 50px;
+  margin-right: 1rem;
+}
+
+.logo h1 {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+}
+
+.nav-links li {
+  margin: 0 1rem;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #8bc34a; /* Light Green */
+}
+
+/* Main Content */
+main {
+  padding: 2rem;
+}
+
+#welcome h2 {
+  color: #009688; /* Teal */
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+#welcome p {
+  font-size: 1.1rem;
+  color: #546e7a; /* Muted Slate */
+}
+
+#features h3,
+#cta h3,
+#testimonials h3 {
+  color: #009688; /* Teal */
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+ul {
+  list-style-type: disc;
+  margin-left: 2rem;
+  color: #546e7a;
+}
+
+#cta {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+#cta .button {
+  background-color: #8bc34a; /* Light Green */
+  color: #fff;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#cta .button:hover {
+  background-color: #689f38; /* Deeper Green */
+}
+
+/* Blockquote */
+blockquote {
+  margin: 1rem 0;
+  font-style: italic;
+  color: #546e7a; /* Muted Slate */
+  padding-left: 1rem;
+  border-left: 4px solid #8bc34a; /* Light Green */
+}
+
+/* Footer Styles */
+footer {
+  text-align: center;
+  padding: 1rem 0;
+  background: #009688; /* Teal */
+  color: #fff;
+}
+
+footer .social-media {
+  list-style: none;
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+footer .social-media li {
+  margin: 0 0.5rem;
+}
+
+footer .social-media a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+footer .social-media a:hover {
+  text-decoration: underline;
+}
