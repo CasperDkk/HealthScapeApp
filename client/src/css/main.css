@@ -7,19 +7,35 @@
 
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #faf9f6; 
+  background-color: #b9d4db; 
   color: #37474f; 
   line-height: 1.6;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  background-image: url(/client/public/images/bg1.avif);
+  background-size: cover;
+  background-position: center; 
+  background-repeat: no-repeat; /* Prevents tiling */
 }
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2); /* Black overlay with 40% opacity */
+  z-index: -1; /* Places the overlay behind the content */
+}
+
 
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #009688; 
+  background: #0f5975;
   color: #fff;
   padding: 1rem 2rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -139,7 +155,7 @@ nav {
 }
 
 main {
-  background: #ffffff;
+  background:  rgba(240, 237, 229, 0.95); 
   padding: 1.5rem;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -168,7 +184,7 @@ ul {
 }
 
 #cta .button {
-  background-color: #8bc34a; /* Light Green */
+  background-color: #8bc34a; 
   color: #fff;
   border: none;
   padding: 0.8rem 1.5rem;
@@ -179,7 +195,7 @@ ul {
 }
 
 #cta .button:hover {
-  background-color: #689f38; /* Deeper Green */
+  background-color: #689f38; 
 }
 
 blockquote {
@@ -187,7 +203,7 @@ blockquote {
   font-style: italic;
   color: #546e7a;
   padding-left: 1rem;
-  border-left: 4px solid #8bc34a; /* Light Green */
+  border-left: 4px solid #8bc34a; 
 }
 
 /* Sidebar */
