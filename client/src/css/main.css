@@ -442,3 +442,32 @@ footer {
 .registration-container p a:hover {
   color: #0d8a9c;
 }
+
+/* Contact Section */
+.contact {
+  padding: 60px 0;
+  background-color: ;
+  text-align: center;
+}
+
+.contact h2 {
+  font-size: 32px;
+  margin-bottom: 30px;
+  color: rgb(244, 237, 237);
+}
+
+#contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+#contact-form input,
+#contact-form textarea {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
