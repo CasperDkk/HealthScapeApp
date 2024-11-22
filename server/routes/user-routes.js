@@ -1,4 +1,4 @@
-// server/routes/userRoutes.js
+// server/routes/user-routes.js
 
 const express = require('express');
 const { registerUser, loginUser, getUserById } = require('../controllers/user-controller'); // Import user controller functions

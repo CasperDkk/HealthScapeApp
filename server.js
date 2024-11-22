@@ -249,9 +249,9 @@ async function insertSampleData() {
     try {
         // Ensure the database is created first
         await createDatabase();
-        const pool = await initDatabase();
-        
-        // Insert sample data after initializing the database
+
+        //Initialize db scheme and seed data
+        await initDatabase();
         await insertSampleData();
 
         // Define the server's port
