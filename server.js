@@ -166,12 +166,12 @@ async function insertSampleData() {
 
         await connection.query(
             'INSERT IGNORE INTO users (username, email, password) VALUES (?, ?, ?)',
-            ['john_doe', 'john@example.com', hashedPassword1]
+            ['john_doe', 'john@example.com', hashed_password_1]
         );
 
         await connection.query(
             'INSERT IGNORE INTO users (username, email, password) VALUES (?, ?, ?)',
-            ['jane_smith', 'jane@example.com', hashedPassword2]
+            ['jane_smith', 'jane@example.com', hashed_password_2]
         );
 
         // Sample hydration logs
@@ -252,7 +252,7 @@ async function insertSampleData() {
 
         //Initialize db scheme and seed data
         await initDatabase();
-        await insertSampleData();
+        await insertSampleData(); 
 
         // Define the server's port
         const PORT = process.env.PORT || 3000;
