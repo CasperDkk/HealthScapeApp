@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
             const password = document.getElementById("password").value.trim();
 
             // Send POST request to register user
-            const response = await fetch('/api/register', {
+            const response = await fetch('/api/users/register', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

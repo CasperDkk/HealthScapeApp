@@ -12,7 +12,7 @@ const activityRoutes = require('./server/routes/activity-routes');
 const errorHandler = require('./server/utils/error-handler'); 
 
 
-dotenv.config();
+dotenv.config(); //Load env variables
 
 // Initialize the Express application
 const app = express();
@@ -20,6 +20,14 @@ const app = express();
 // Middleware setup
 app.use(cors()); // Enable CORS for all routes
 app.use(express.json()); // Parse JSON request bodies
+
+
+// Define API routes
+app.use('/api/users', userRoutes); // User-related routes
+app.use('/api/activities', activityRoutes); // Activity-related routes
+
+// Error handling middleware
+app.use(errorHandler); // Custom error handler for centralized error management
 
 // Function to create the database if it doesn't exist
 async function createDatabase() {
@@ -62,12 +70,6 @@ app.use(session({
     }
 }));
 
-// Define API routes
-app.use('/api/users', userRoutes); // User-related routes
-app.use('/api/activities', activityRoutes); // Activity-related routes
-
-// Error handling middleware
-app.use(errorHandler); // Custom error handler for centralized error management
 
 // Function to initialize the database schema and seed data
 async function initDatabase() {
