@@ -183,8 +183,8 @@ ul {
   margin-top: 2rem;
 }
 
-#cta .button {
-  background-color: #8bc34a; 
+.button {
+  background-color: #17a2b8;
   color: #fff;
   border: none;
   padding: 0.8rem 1.5rem;
@@ -194,8 +194,8 @@ ul {
   transition: background-color 0.3s ease;
 }
 
-#cta .button:hover {
-  background-color: #689f38; 
+.button:hover {
+  background-color: #0d8a9c; /* Darken on hover */
 }
 
 blockquote {
