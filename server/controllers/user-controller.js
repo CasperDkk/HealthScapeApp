@@ -36,6 +36,7 @@ exports.loginUser = async (req, res) => {
     const { email, password } = req.body;
 
     try {
+        // Fetch the user from the database
         const [rows] = await pool.query('SELECT * FROM users WHERE email = ?', [email]);
 
         if (rows.length === 0) {
@@ -43,6 +44,8 @@ exports.loginUser = async (req, res) => {
         }
 
         const user = rows[0];
+
+        // Compare the provided password with the hashed password in the database
         const isMatch = await bcrypt.compare(password, user.password);
 
         if (!isMatch) {

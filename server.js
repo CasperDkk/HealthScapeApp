@@ -29,23 +29,8 @@ app.use('/api/activities', activityRoutes); // Activity-related routes
 // Error handling middleware
 app.use(errorHandler); // Custom error handler for centralized error management
 
-// Function to create the database if it doesn't exist
-async function createDatabase() {
-    const connection = await mysql.createConnection({
-        host: process.env.DB_HOST,
-        user: process.env.DB_USER,
-        password: process.env.DB_PASSWORD
-    });
-
-    try {
-        await connection.query('CREATE DATABASE IF NOT EXISTS healthscape');
-        console.log("Database 'healthscape' created or already exists.");
-    } catch (error) {
-        console.error("Error creating database:", error);
-    } finally {
-        await connection.end();
-    }
-}
+// Serve static files from the client/public directory (public assets)
+app.use(express.static('client/public'));
 
 // Session management using MySQLStore
 const pool = mysql.createPool({
@@ -70,6 +55,23 @@ app.use(session({
     }
 }));
 
+// Function to create the database if it doesn't exist
+async function createDatabase() {
+    const connection = await mysql.createConnection({
+        host: process.env.DB_HOST,
+        user: process.env.DB_USER,
+        password: process.env.DB_PASSWORD
+    });
+
+    try {
+        await connection.query('CREATE DATABASE IF NOT EXISTS healthscape');
+        console.log("Database 'healthscape' created or already exists.");
+    } catch (error) {
+        console.error("Error creating database:", error);
+    } finally {
+        await connection.end();
+    }
+}
 
 // Function to initialize the database schema and seed data
 async function initDatabase() {
