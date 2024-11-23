@@ -57,6 +57,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             const data = await response.json();
             localStorage.setItem('token', data.token); // Store JWT in local storage
+            sessionStorage.setItem('userId', data.userId); // Store user ID in session storage
             alert('Login successful!');
             window.location.href = 'dashboard.html'; // Redirect to dashboard page
         });

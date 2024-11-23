@@ -56,7 +56,7 @@ exports.loginUser = async (req, res) => {
 
         req.session.userId = user.id; // Store user ID in session
 
-        res.json({ message: 'Login successful', userId: user.id });
+        res.json({ message: 'Login successful', userId: user.id }); // Return user ID along with success message
     } catch (error) {
         console.error('Error logging in:', error);
         res.status(500).json({ message: 'Internal server error' });
@@ -77,6 +77,28 @@ exports.getUserById = async (req, res) => {
         res.json(rows[0]);
     } catch (error) {
         console.error('Error fetching user:', error);
+        res.status(500).json({ message: 'Internal server error' });
+    }
+};
+
+// Function to update metrics entered by user on dashboard
+exports.updateMetrics = async (req, res) => {
+    const userId = req.session.userId; // Get user ID from session
+    const { dailySteps, waterIntake, moodStatus, exerciseLogs } = req.body;
+
+    if (!userId) {
+        return res.status(401).json({ message: 'Unauthorized' });
+    }
+
+    try {
+        await pool.query(
+            `UPDATE users SET daily_steps = ?, water_intake = ?, mood_status = ?, exercise_logs = ? WHERE id = ?`,
+            [dailySteps, waterIntake, moodStatus, JSON.stringify(exerciseLogs), userId]
+        );
+
+        res.json({ message: 'Metrics updated successfully' });
+    } catch (error) {
+        console.error('Error updating metrics:', error);
         res.status(500).json({ message: 'Internal server error' });
     }
 };
