@@ -27,4 +27,4 @@ const authMiddleware = async (req, res, next) => {
     }
 };
 
-module.exports = authMiddleware; // Export the middleware
+module.exports = authMiddleware; 

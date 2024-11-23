@@ -22,9 +22,6 @@ app.use(cors()); // Enable CORS for all routes
 app.use(express.json()); // Parse JSON request bodies
 
 
-// Define API routes
-app.use('/api/users', userRoutes); // User-related routes
-app.use('/api/activities', activityRoutes); // Activity-related routes
 
 // Error handling middleware
 app.use(errorHandler); // Custom error handler for centralized error management
@@ -54,6 +51,10 @@ app.use(session({
         httpOnly: true //mitigate against XSS attacks
     }
 }));
+
+// Define API routes
+app.use('/api/users', userRoutes); // User-related routes
+app.use('/api/activities', activityRoutes); // Activity-related routes
 
 // Function to create the database if it doesn't exist
 async function createDatabase() {

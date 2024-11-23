@@ -34,10 +34,12 @@ exports.registerUser = async (req, res) => {
 // Function to log in a user
 exports.loginUser = async (req, res) => {
     const { email, password } = req.body;
+    console.log('Login attempt:', { email, password }); // Log incoming login attempt
 
     try {
         // Fetch the user from the database
         const [rows] = await pool.query('SELECT * FROM users WHERE email = ?', [email]);
+        console.log('Database response:', rows); // Log database response
 
         if (rows.length === 0) {
             return res.status(401).json({ message: 'Invalid email or password' });
