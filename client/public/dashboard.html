@@ -5,11 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>HealthScape App</title>
     <link rel="stylesheet" href="main.css" />
-    <link
-      rel="icon"
-      href="/client/public/favicon/favicon.ico"
-      type="image/x-icon"
-    />
+    <link rel="icon" href="favicon/favicon.ico" type="image/x-icon" />
   </head>
   <body>
     <!-- Header and Title-->
@@ -61,13 +57,30 @@
         <div class="metric">
           <h3>Daily Steps</h3>
           <p id="dailySteps">0 steps</p>
+          <input type="number" id="editDailySteps" placeholder="Edit steps" />
+          <button onclick="updateSteps()">Save Steps</button>
         </div>
         <div class="metric">
           <h3>Water Intake</h3>
           <p id="waterIntake">0 liters</p>
+          <input
+            type="number"
+            id="editWaterIntake"
+            placeholder="Edit water intake"
+          />
+          <button onclick="updateWaterIntake()">Save Water Intake</button>
         </div>
         <div class="metric">
           <h3>Mood Status</h3>
+          <select id="editMoodStatus">
+            <option value="">Select Mood</option>
+            <option value="Happy">Happy</option>
+            <option value="Sad">Sad</option>
+            <option value="Neutral">Neutral</option>
+            <option value="Anxious">Anxious</option>
+            <option value="Excited">Excited</option>
+          </select>
+          <button onclick="updateMood()">Save Mood Status</button>
           <p id="moodStatus">Neutral</p>
         </div>
         <div class="metric">
@@ -75,6 +88,12 @@
           <ul id="exerciseLogs">
             <li>No logs yet.</li>
           </ul>
+          <input
+            type="text"
+            id="newExerciseLog"
+            placeholder="Add new exercise log"
+          />
+          <button onclick="addExerciseLog()">Add Log</button>
         </div>
       </section>
 
