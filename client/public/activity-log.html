@@ -1,76 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Activity Log - HealthScape</title>
-    <link rel="stylesheet" href="main.css">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-</head>
-<body>
-
-    <!-- Header -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HealthScape App</title>
+    <link rel="stylesheet" href="main.css" />
+    <link
+      rel="icon"
+      href="/client/public/favicon/favicon.ico"
+      type="image/x-icon"
+    />
+  </head>
+  <body>
+    <!-- Header and Title-->
     <header>
-        <div class="logo">
-            <img src="images/logo.png" alt="HealthScape Logo">
-            <h1>HealthScape</h1>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="dashboard.html">Dashboard</a></li>
-                <li><a href="profile.html">Profile</a></li>
-                <li><a href="activity-log.html">Activity Log</a></li>
-                <li><a href="mood-tracker.html">Mood Tracker</a></li>
-                <li><a href="nutrition-log.html">Nutrition Log</a></li>
-                <li><a href="hydration.html">Hydration</a></li>
-                <li><a href="sleep-tracker.html">Sleep Tracker</a></li>
-                <li><a href="resources.html">Resources</a></li>
-                <li><a href="community-forum.html">Community</a></li>
-            </ul>
-        </nav>
+      <div class="logo">
+        <img src="images/Logo-main.JPG" alt="HealthScape Logo" />
+        <h1>HealthScape</h1>
+      </div>
+
+      <!-- Search Bar -->
+      <div class="search-bar">
+        <input type="text" placeholder="Search..." />
+      </div>
     </header>
+
+    <!-- Navigation Bar -->
+    <nav>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="dashboard.html" id="dashboardLink">Dashboard</a></li>
+        <li><a href="profile.html" id="profileLink">Profile</a></li>
+        <li>
+          <a href="activity-log.html" id="activityLogLink">Activity Log</a>
+        </li>
+        <li>
+          <a href="mood-tracker.html" id="moodTrackerLink">Mood Tracker</a>
+        </li>
+        <li>
+          <a href="nutrition-log.html" id="nutritionLogLink">Nutrition Log</a>
+        </li>
+        <li><a href="hydration.html" id="hydrationLink">Hydration</a></li>
+        <li>
+          <a href="sleep-tracker.html" id="sleepTrackerLink">Sleep Tracker</a>
+        </li>
+      </ul>
+
+      <div class="hamburger-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
 
     <!-- Main Content Area -->
     <main id="mainContent">
-        <h2>Activity Log</h2>
+      <h2>Activity Log</h2>
 
-        <!-- Activity Log Form Section -->
-        <form id="activityLogForm">
-            <label for="activityName">Activity Name:</label><br />
-            <input type="text" id="activityName" name="activityName" required /><br />
+      <!-- Activity Log Form Section -->
+      <form id="activityLogForm">
+        <label for="activityName">Activity Name:</label><br />
+        <input
+          type="text"
+          id="activityName"
+          name="activityName"
+          required
+        /><br />
 
-            <label for="duration">Duration (minutes):</label><br />
-            <input type="number" id="duration" name="duration" required /><br />
+        <label for="duration">Duration (minutes):</label><br />
+        <input type="number" id="duration" name="duration" required /><br />
 
-            <label for="intensity">Intensity:</label><br />
-            <select id="intensity" name="intensity">
-                <option value="low">Low</option>
-                <option value="moderate">Moderate</option>
-                <option value="high">High</option>
-            </select><br />
+        <label for="intensity">Intensity:</label><br />
+        <select id="intensity" name="intensity">
+          <option value="low">Low</option>
+          <option value="moderate">Moderate</option>
+          <option value="high">High</option></select
+        ><br />
 
-            <label for="notes">Notes:</label><br />
-            <textarea id="notes" name="notes"></textarea><br />
+        <label for="notes">Notes:</label><br />
+        <textarea id="notes" name="notes"></textarea><br />
 
-            <!-- Submit Button -->
-            <button type="submit">Log Activity</button>
-        </form>
+        <!-- Submit Button -->
+        <button type="submit">Log Activity</button>
+      </form>
 
-        <!-- Feedback Message -->
-        <div id="feedbackMessage"></div> <!-- Added feedback message div -->
+      <!-- Feedback Message -->
+      <div id="feedbackMessage"></div>
+      <!-- Added feedback message div -->
     </main>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2024 HealthScape. All rights reserved.</p>
-        <ul class="social-media">
-            <li><a href="#">Facebook</a></li>
-            <li><a href="#">Twitter</a></li>
-            <li><a href="#">Instagram</a></li>
-        </ul>
+      <p>&copy; 2024 HealthScape. All rights reserved.</p>
+      <ul class="social-links">
+        <li><a href="#">Facebook</a></li>
+        <li><a href="#">Twitter</a></li>
+        <li><a href="#">Instagram</a></li>
+      </ul>
     </footer>
 
     <!-- JavaScript -->
-    <script src="components/activity-log.js"></script> <!-- Updated JavaScript file path -->
-</body>
+    <script src="components/activity-log.js"></script>
+    <!-- Updated JavaScript file path -->
+  </body>
 </html>
