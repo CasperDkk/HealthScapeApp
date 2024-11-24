@@ -7,7 +7,11 @@ CREATE TABLE IF NOT EXISTS users (
     username VARCHAR(50) NOT NULL UNIQUE,
     email VARCHAR(100) NOT NULL UNIQUE,
     password VARCHAR(255) NOT NULL,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    daily_steps INT DEFAULT 0,
+    water_intake DECIMAL(5, 2) DEFAULT 0,
+    mood_status VARCHAR(50),
+    exercise_logs TEXT
 );
 -- Hydration Logs table
 CREATE TABLE IF NOT EXISTS hydration_logs (
