@@ -183,15 +183,17 @@ ul {
   margin-top: 2rem;
 }
 
+/* button styles */
 .button {
   background-color: #17a2b8;
   color: #fff;
   border: none;
-  padding: 0.8rem 1.5rem;
+  padding: 0.5rem 1rem;
   font-size: 1rem;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  display: inline-block;
 }
 
 .button:hover {
@@ -468,5 +470,32 @@ footer {
   border-radius: 5px;
   border: 1px solid #ccc;
   font-size: 16px;
+}
+
+/* Health metrics section */
+.health-metrics {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem; 
+  padding: 1rem;
+}
+
+/* Individual metric styles */
+.metric {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem; /* Space between elements in each metric */
+}
+
+/* Input field styles */
+input[type="number"],
+input[type="text"],
+select {
+  height: 40px; 
+  width: 400px;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
 
