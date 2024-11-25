@@ -13,7 +13,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background-image: url(/client/public/images/bg1.avif);
+  background-image: url(images/bg1.avif);
   background-size: cover;
   background-position: center; 
   background-repeat: no-repeat; /* Prevents tiling */
