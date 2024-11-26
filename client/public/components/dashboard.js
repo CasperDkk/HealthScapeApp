@@ -138,6 +138,48 @@ async function updateWaterIntake() {
     }
 }
 
+// Function to update mood status
+async function updateMood() {
+    const newMood = document.getElementById('editMoodStatus').value;
+    
+    if (newMood) {
+        document.getElementById('moodStatus').innerText = newMood;
+
+        console.log(`Updated mood status: ${newMood}`);
+        
+        // Optionally clear the dropdown after updating
+        document.getElementById('editMoodStatus').value = '';
+        
+    } else {
+        alert("Please select a valid mood.");
+    }
+}
+
+// Function to add a new exercise log
+async function addExerciseLog() {
+    const newLog = document.getElementById('newExerciseLog').value;
+    
+    if (newLog) {
+        const exerciseLogContainer = document.getElementById('exerciseLogs');
+        
+        const listItem = document.createElement('li');
+        listItem.innerText = newLog;
+        
+        exerciseLogContainer.appendChild(listItem);
+        
+        // Send updated exercise logs to the server (you may want to implement this)
+        const currentLogs = Array.from(exerciseLogContainer.children).map(li => li.innerText);
+        await sendMetricsToServer({ exerciseLogs: [...currentLogs, newLog] });
+ 
+        // Optionally clear the input field after adding the log
+        document.getElementById('newExerciseLog').value = '';
+        
+        console.log(`Added new exercise log: ${newLog}`);
+    } else {
+        alert("Please enter a valid exercise log.");
+    }
+ }
+ 
 // Function to send metrics to the server
 async function sendMetricsToServer(metrics) {
     try {
