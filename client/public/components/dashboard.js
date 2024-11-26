@@ -27,15 +27,15 @@ async function initDashboard() {
 
 // Function to create the daily steps chart
 function createStepsChart() {
-    const ctx = document.getElementById('stepsChart').getContext('2d');
+    const stepsCanvas = document.getElementById('stepsChart').getContext('2d');
 
     // Clear previous chart if it exists
     if (window.stepsChart instanceof Chart) {
         window.stepsChart.destroy();
     }
 
-    window.stepsChart = new Chart(ctx, {
-        type: 'line',
+    window.stepsChart = new Chart(stepsCanvas, {
+        type: 'bar',
         data: {
             labels: dailyStepsData.map((_, index) => `Day ${index + 1}`), // Label each entry as a day
             datasets: [{
@@ -52,7 +52,7 @@ function createStepsChart() {
             scales: {
                 y: {
                     beginAtZero: true,
-                    max: 8000 // Maximum value for steps
+                    max: 10000 // Maximum value for steps
                 }
             }
         }
@@ -61,14 +61,14 @@ function createStepsChart() {
 
 // Function to create the water intake chart
 function createWaterIntakeChart() {
-    const ctx = document.getElementById('waterChart').getContext('2d');
+    const waterCanvas = document.getElementById('waterChart').getContext('2d');
 
     // Clear previous chart if it exists
     if (window.waterChart instanceof Chart) {
         window.waterChart.destroy();
     }
 
-    window.waterChart = new Chart(ctx, {
+    window.waterChart = new Chart(waterCanvas, {
         type: 'bar',
         data: {
             labels: waterIntakeData.map((_, index) => `Day ${index + 1}`), // Label each entry as a day
@@ -85,7 +85,7 @@ function createWaterIntakeChart() {
             scales: {
                 y: {
                     beginAtZero: true,
-                    max: 7 // Maximum value for water intake
+                    max: 8 // Maximum value for water intake
                 }
             }
         }

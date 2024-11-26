@@ -6,7 +6,8 @@
     <title>HealthScape App</title>
     <link rel="stylesheet" href="main.css" />
     <link rel="icon" href="favicon/favicon.ico" type="image/x-icon" />
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!--chart.js-->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!--chart.js-->
   </head>
   <body>
     <!-- Header and Title-->
@@ -59,7 +60,13 @@
           <h3>Daily Steps</h3>
           <p id="dailySteps">0 steps</p>
           <input type="number" id="editDailySteps" placeholder="Edit steps" />
-          <button class="button" style="max-width: 150px; width: auto;" onclick="updateSteps()">Save Steps</button>
+          <button
+            class="button"
+            style="max-width: 150px; width: auto"
+            onclick="updateSteps()"
+          >
+            Save Steps
+          </button>
         </div>
         <div class="metric">
           <h3>Water Intake</h3>
@@ -69,7 +76,13 @@
             id="editWaterIntake"
             placeholder="Edit water intake"
           />
-          <button class="button" style="max-width: 150px; width: auto;" onclick="updateWaterIntake()">Save Water Intake</button>
+          <button
+            class="button"
+            style="max-width: 150px; width: auto"
+            onclick="updateWaterIntake()"
+          >
+            Save Water Intake
+          </button>
         </div>
         <div class="metric">
           <h3>Mood Status</h3>
@@ -81,7 +94,13 @@
             <option value="Anxious">Anxious</option>
             <option value="Excited">Excited</option>
           </select>
-          <button class="button" style="max-width: 150px; width: auto;" onclick="updateMood()">Save Mood Status</button>
+          <button
+            class="button"
+            style="max-width: 150px; width: auto"
+            onclick="updateMood()"
+          >
+            Save Mood Status
+          </button>
           <p id="moodStatus">Neutral</p>
         </div>
         <div class="metric">
@@ -94,19 +113,26 @@
             id="newExerciseLog"
             placeholder="Add new exercise log"
           />
-          <button class="button" style="max-width: 150px; width: auto;" onclick="addExerciseLog()">Add Log</button>
+          <button
+            class="button"
+            style="max-width: 150px; width: auto"
+            onclick="addExerciseLog()"
+          >
+            Add Log
+          </button>
         </div>
       </section>
 
       <!-- Graphical Representation (Placeholder) -->
       <section class="charts">
-        <section class="charts">
-          <h3>Progress Charts</h3>
-          <div>
-            <canvas id="stepsChart" width="400" height="200"></canvas>
-        </div>
-        <div>
-            <canvas id="waterChart" width="400" height="200"></canvas>
+        <h3>Progress Charts</h3>
+        <div id="chartsContainer">
+          <div class="chart">
+            <canvas id="stepsChart"></canvas>
+          </div>
+          <div class="chart">
+            <canvas id="waterChart"></canvas>
+          </div>
         </div>
       </section>
     </main>

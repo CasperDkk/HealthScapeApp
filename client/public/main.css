@@ -532,3 +532,34 @@ textarea#notes {
   border-radius: 4px; 
   resize: vertical; 
 }
+
+/* General styling for the chart container */
+#chartsContainer {
+  display: flex; /* Enables side-by-side layout */
+  justify-content: space-between; /* Adds space between the charts */
+  align-items: center; /* Aligns charts vertically */
+  gap: 20px; /* Adds spacing between the charts */
+  margin: 20px auto; /* Centers the container */
+  max-width: 900px; /* Limits the maximum width */
+}
+
+/* Styling for each chart */
+.chart {
+  flex: 1; /* Ensures each chart takes up equal space */
+  max-width: 45%; /* Sets a maximum width for each chart */
+  height: 300px; /* Fixes the height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f9f9f9; /* Light background for a professional look */
+  border: 1px solid #ddd; /* Subtle border for differentiation */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  padding: 10px; /* Padding inside the chart container */
+}
+
+/* Ensure the canvas fits properly inside the chart container */
+.chart canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
