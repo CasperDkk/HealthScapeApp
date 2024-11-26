@@ -499,3 +499,35 @@ select {
   border-radius: 4px;
 }
 
+#journalEntriesContainer {
+  background-color: #ffffff; /* White background for contrast */
+  border: 1px solid #ccc; /* Light gray border */
+  border-radius: 8px; /* Rounded corners */
+  padding: 20px;
+  margin: 0, auto;
+  max-width: 600px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); 
+  float: left;
+  clear: both; 
+}
+
+#journalEntriesContainer p {
+  color: #546e7a; 
+  font-size: 1.2rem; 
+  text-align: left; 
+}
+
+label[for="notes"] {
+  display: block; /* Ensures the label takes a full line */
+  font-weight: bold; /* Makes the label text bold */
+}
+
+textarea#notes {
+  width: 500px; /* Set the width to 500 pixels */
+  height: 150px; /* Set a height for the textarea */
+ 
+  font-size: 1rem; /* Set font size for readability */
+  border: 1px solid #ccc; /* Light gray border */
+  border-radius: 4px; /* Slightly rounded corners */
+  resize: vertical; /* Allow vertical resizing only */
+}
