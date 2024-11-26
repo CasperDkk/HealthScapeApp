@@ -518,16 +518,17 @@ select {
 }
 
 label[for="notes"] {
-  display: block; /* Ensures the label takes a full line */
-  font-weight: bold; /* Makes the label text bold */
+  display: block; 
+  font-weight: bold; 
+  margin-top: 0.5em;
+  margin-bottom: 0.1rem;
 }
 
 textarea#notes {
-  width: 500px; /* Set the width to 500 pixels */
-  height: 150px; /* Set a height for the textarea */
- 
-  font-size: 1rem; /* Set font size for readability */
-  border: 1px solid #ccc; /* Light gray border */
-  border-radius: 4px; /* Slightly rounded corners */
-  resize: vertical; /* Allow vertical resizing only */
+  width: 500px; 
+  height: 150px; /
+  font-size: 1rem; 
+  border: 1px solid #ccc; 
+  border-radius: 4px; 
+  resize: vertical; 
 }
