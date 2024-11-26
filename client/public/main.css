@@ -526,7 +526,7 @@ label[for="notes"] {
 
 textarea#notes {
   width: 500px; 
-  height: 150px; /
+  height: 150px; 
   font-size: 1rem; 
   border: 1px solid #ccc; 
   border-radius: 4px; 
